@@ -2,6 +2,7 @@
 require("dotenv").config();
 //Required needed modules
 const express = require('express');
+const methodOverrride = require('method-override')
 //initializes the app object
 const app = express();
 
@@ -10,7 +11,8 @@ app.set('views', __dirname + '/views');
 app.set('view engine', 'jsx');
 app.engine('jsx', require('express-react-views').createEngine());
 app.use(express.static('public'));
-app.use(express.urlencoded({ extended: true }))
+app.use(express.urlencoded({ extended: true }));
+app.use(methodOverrride('_method'));
 
 
 //MIDDLEWARE - ROUTER

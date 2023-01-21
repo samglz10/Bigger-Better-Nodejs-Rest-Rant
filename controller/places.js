@@ -26,12 +26,10 @@ router.get('/:id', (req, res) => {
     }
   })
   
-  
 //New Edit Place Route - dynamic ID
 router.get('/:id/edit',(req,res) => {
     res.send('places/:id/edit')
 })
-
 
 //POST(CREATE) - New restaurant
 router.post('/', (req, res) => {
@@ -49,4 +47,21 @@ router.post('/', (req, res) => {
     places.push(req.body)
     res.redirect('/places')
   })
+
+router.delete('/places/:id', (req, res) => {
+    let id = Number(req.params.id)
+    if (isNaN(id)) {
+        res.render('error404')
+    }
+    else if (!places[id]) {
+        res.render('error404')
+    }
+    else {
+        data.places.splice(id, 1)
+        res.redirect('/places')
+    }
+})
+
+  
+  
 module.exports = router

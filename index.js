@@ -7,12 +7,13 @@ const methodOverrride = require('method-override')
 const app = express();
 
 // Express Settings
+app.use(methodOverrride('_method'));
 app.set('views', __dirname + '/views');
 app.set('view engine', 'jsx');
 app.engine('jsx', require('express-react-views').createEngine());
 app.use(express.static('public'));
 app.use(express.urlencoded({ extended: true }));
-app.use(methodOverrride('_method'));
+
 
 
 //MIDDLEWARE - ROUTER
@@ -30,7 +31,6 @@ app.use('/places', require('./controller/places'));
     app.get('*',(req,res) => {
         res.render('error404')
     })
-
 
 app.listen(process.env.PORT, ()=> {
     console.log('listening on http://localhost:3000/')

@@ -5,6 +5,11 @@ const express = require('express')
 //initializes the app object
 const app = express() 
 
+// MIDDLEWARE - 
+app.set('views', __dirname + '/views')
+app.set('view engine', 'jsx')
+app.engine('jsx', require('express-react-views').createEngine())
+
 // forward slash leads back to root or home
 //req or request listens for routes
 //GET ROUTES
@@ -32,8 +37,7 @@ const app = express()
     })
 
 
-
-
-app.listen(3000, ()=> {
+app.listen(process.env.PORT, ()=> {
     console.log('listening on http://localhost:3000/')
+    console.log(process.env.PORT)
 })

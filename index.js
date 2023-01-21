@@ -1,16 +1,18 @@
 //https://expressjs.com/en/guide/routing.html
 require("dotenv").config();
 //Required needed modules
-const express = require('express') 
+const express = require('express');
 //initializes the app object
-const app = express() 
+const app = express();
 
-// MIDDLEWARE - 
-app.set('views', __dirname + '/views')
-app.set('view engine', 'jsx')
-app.engine('jsx', require('express-react-views').createEngine())
+// Express Settings
+app.set('views', __dirname + '/views');
+app.set('view engine', 'jsx');
+app.engine('jsx', require('express-react-views').createEngine());
+app.use(express.static('public'));
 
 //MIDDLEWARE - ROUTER
+//this is a mini app where all my app.get for places will now be stored in controller/places.js
 app.use('/places', require('./controller/places'));
 
 // forward slash leads back to root or home
@@ -18,28 +20,9 @@ app.use('/places', require('./controller/places'));
 //GET ROUTES
     app.get('/',(req,res) => {
         //res.render send html jsx is the same
-        res.render('./layouts/default')
-    })
-    app.get('/home',(req,res) => {
-        //res.render send html jsx is the same
         res.render('home')
     })
-    //Places Route
-    app.get('/places',(req,res) => {
-        res.send('Places')
-    })
-    //New Place Route
-    app.get('/places/new',(req,res) => {
-        res.send('places/new')
-    })
-    //New Place Route - dynamic ID
-    app.get('/places/:id',(req,res) => {
-        res.send('places/:id')
-    })
-    //New Edit Place Route - dynamic ID
-    app.get('/places/:id/edit',(req,res) => {
-        res.send('places/:id/edit')
-    })
+
     app.get('*',(req,res) => {
         res.render('error404')
     })

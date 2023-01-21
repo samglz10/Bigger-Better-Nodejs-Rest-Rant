@@ -24,7 +24,7 @@ router.get('/', (req, res) => {
 
 //New Place Route
 router.get('/new',(req,res) => {
-    res.send('places/new')
+    res.render('places/new')
 })
 //New Place Route - dynamic ID
 router.get('/:id',(req,res) => {

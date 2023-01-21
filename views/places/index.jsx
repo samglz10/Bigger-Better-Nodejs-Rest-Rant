@@ -20,7 +20,7 @@ const PlacesIndex =(data) => {
             <div className='places-images'>
                 <Image className='image-fit' src={place.pic} alt={place.name} />
             </div>
-              <p clasName="text-center">
+              <p clasName="places-description">
                       Located in {place.city}, {place.state}
               </p>
           </>

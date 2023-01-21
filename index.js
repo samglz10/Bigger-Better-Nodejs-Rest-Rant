@@ -8,8 +8,7 @@ const app = express()
 // forward slash leads back to root or home
 //req or request listens for routes
 app.get('/',(req,res) => {
-    res.send('hello homie')
-    console.log(res)
+    res.send('Home')
 })
 
 app.listen(3000, ()=> {

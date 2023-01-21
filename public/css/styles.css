@@ -32,7 +32,6 @@ h1 {
 }
 .places-thumbnails {
     display: flex;
-
     text-align: center;
     justify-content: center;
     height: 500px;
@@ -43,6 +42,7 @@ h1 {
 .place-name {
   text-align: center;
 }
+
 .places-description {
   text-align: center;
   display: flex;

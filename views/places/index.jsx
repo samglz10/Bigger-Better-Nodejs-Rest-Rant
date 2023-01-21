@@ -3,13 +3,12 @@ const DefaultPage = require('../layouts/default')
 import Button from 'react-bootstrap/Button';
 import Image from 'react-bootstrap/Image';
 //data parameter will pass
-const PlacesIndex =(data, idx) => {
-    let placesFormatted = data.places.map((place, idx) => {
+const PlacesIndex =(data) => {
+    let placesFormatted = data.places.map((place) => {
         return (
-          
           <>
           <div className="places-description" >
-              <h2 key={idx}>
+              <h2>
                 {place.name}
               </h2>
                 <div className='place-name'>

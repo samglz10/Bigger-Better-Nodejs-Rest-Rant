@@ -69,3 +69,6 @@ Possible bonus ideas:
 * Update for comments
 * Aggregate rating for a place
 * Auto-complete state dropdown
+
+
+!!Let off at the end of part 4 - touch up on bootstrap styles!!!

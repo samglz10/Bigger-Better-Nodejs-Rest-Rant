@@ -32,8 +32,35 @@ h1 {
 }
 .places-thumbnails {
     display: flex;
+
+    text-align: center;
     justify-content: center;
-    height: auto;
-    width: auto;
+    height: 500px;
+    width: 500px;
     margin: 0;
 }
+
+.place-name {
+  text-align: center;
+}
+.places-description {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0;
+}
+.places-images {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  object-fit:cover;
+}
+.image-fit{
+  text-align: center;
+  width:25%;
+  height:25%;
+  object-fit:cover;
+}
+

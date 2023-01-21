@@ -10,6 +10,8 @@ app.set('views', __dirname + '/views');
 app.set('view engine', 'jsx');
 app.engine('jsx', require('express-react-views').createEngine());
 app.use(express.static('public'));
+app.use(express.urlencoded({ extended: true }))
+
 
 //MIDDLEWARE - ROUTER
 //this is a mini app where all my app.get for places will now be stored in controller/places.js

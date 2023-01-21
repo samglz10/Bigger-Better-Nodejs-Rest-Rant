@@ -3,16 +3,17 @@ const DefaultPage = require('../layouts/default')
 import Button from 'react-bootstrap/Button';
 import Image from 'react-bootstrap/Image';
 //data parameter will pass
-const PlacesIndex =(data) => {
-    let placesFormatted = data.places.map((place) => {
+const PlacesIndex =(data, idx) => {
+    let placesFormatted = data.places.map((place, idx) => {
         return (
+          
           <>
-          <div className="places-description">
-              <h2>
+          <div className="places-description" >
+              <h2 key={idx}>
                 {place.name}
               </h2>
                 <div className='place-name'>
-                  <p clasName="text-center">
+                  <p className="text-center">
                     {place.cuisines}
                   </p>
                 </div>
@@ -20,7 +21,7 @@ const PlacesIndex =(data) => {
             <div className='places-images'>
                 <Image className='image-fit' src={place.pic} alt={place.name} />
             </div>
-              <p clasName="places-description">
+              <p className="places-description">
                       Located in {place.city}, {place.state}
               </p>
           </>

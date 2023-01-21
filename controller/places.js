@@ -26,7 +26,7 @@ router.get('/', (req, res) => {
 router.get('/new',(req,res) => {
     res.render('places/new')
 })
-//New Place Route - dynamic ID
+//New Place Route - dynamic ID must be below any other variables
 router.get('/:id',(req,res) => {
     res.send('places/:id')
 })
@@ -35,4 +35,9 @@ router.get('/:id/edit',(req,res) => {
     res.send('places/:id/edit')
 })
 
+router.post('/', (req, res) => {
+    console.log(req.body)
+    res.send('POST /places')
+  })
+  
 module.exports = router

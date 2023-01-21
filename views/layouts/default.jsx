@@ -14,9 +14,9 @@ return (
   crossorigin="anonymous"/>
   <link rel="stylesheet" href='/css/styles.css'/>
     </head>
-    <body>
+    <body className='inner cover'>
         <div className='.container-fluid'>
-            views/layouts/default is following this format
+            {console.log("views/layouts/default is following this format")}
             {html.children}
         </div>
     </body>

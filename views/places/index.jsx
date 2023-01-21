@@ -1,26 +1,32 @@
 const React = require('react')
 const DefaultPage = require('../layouts/default')
 import Button from 'react-bootstrap/Button';
+import Image from 'react-bootstrap/Image';
 //data parameter will pass
 const PlacesIndex =(data) => {
     let placesFormatted = data.places.map((place) => {
         return (
-        <div>
-            <h2 key={place.id}>{place.name}</h2>
-            <img src={place.pic} alt={place.name}/>
-            {console.log(place.key)}
-        </div>
+          <div className="col-sm-6">
+            <h2>{place.name}</h2>
+            <p clasName="text-center">
+              {place.cuisines}
+            </p>
+            <Image src={place.pic} alt={place.name} />
+            <p clasName="text-center">
+              Located in {place.city}, {place.state}
+            </p>
+          </div>
         )
-    })
+      })
+      
         return (
             <DefaultPage>
+                <link rel="stylesheet" href='/css/styles.css'/>
                 <main>
-                    <h1> This is the Places/Index page </h1>
-                    <p> This will be the index for all the places stored</p>
-                    <div>
+                    <div className='row'>
                         {placesFormatted}
-                        <a href="/">
-                            <Button variant="primary">Home</Button>
+                        <a className='btn-nav' href="/">
+                            <Button  variant="primary">Home</Button>
                          </a>
                     </div>
                 </main>

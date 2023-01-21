@@ -2,4 +2,38 @@ h1 {
     text-align: center;
     color: cornflowerblue;
   }
-  
+
+.thumbnail-div {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+  }
+
+.thumbnail {
+    display: flex;
+    justify-content: center;
+    height: auto;
+    width: 1000px;
+    margin: 0;
+  }
+
+.img-descritpion {
+    display: flex;
+    text-align: center;
+    align-content: center;
+    justify-content: center;
+
+  }
+.btn-nav {
+    display: flex;
+    text-align: center;
+    align-content: center;
+    justify-content: center;
+}
+.places-thumbnails {
+    display: flex;
+    justify-content: center;
+    height: auto;
+    width: auto;
+    margin: 0;
+}

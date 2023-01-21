@@ -13,9 +13,19 @@ router.get('/new',(req,res) => {
     res.render('places/new')
 })
 //New Place Route - dynamic ID must be below any other variables
-router.get('/:id',(req,res) => {
-    res.send('places/:id')
-})
+router.get('/:id', (req, res) => {
+    let id = Number(req.params.id)
+    if (isNaN(id)) {
+      res.render('error404')
+    }
+    else if (!places[id]) {
+      res.render('error404')
+    }
+    else {
+      res.render('places/show', {place: places[id]})
+    }
+  })
+  
 //New Edit Place Route - dynamic ID
 router.get('/:id/edit',(req,res) => {
     res.send('places/:id/edit')

@@ -4,13 +4,16 @@ import Button from 'react-bootstrap/Button';
 import Image from 'react-bootstrap/Image';
 //data parameter will pass
 const PlacesIndex =(data) => {
-    let placesFormatted = data.places.map((place) => {
+    let placesFormatted = data.places.map((place, index) => {
         return (
           <>
           <div className="places-description" >
               <h2>
                 {place.name}
               </h2>
+              <a href={`/places/${index}`}>
+                {place.name}
+              </a>
                 <div className='place-name'>
                   <p className="text-center">
                     {place.cuisines}

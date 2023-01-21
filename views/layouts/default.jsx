@@ -7,7 +7,10 @@ return (
         <title>REST-RANT</title>
     </head>
     <body>
-        {html.children}
+        <div className='.container-fluid'>
+            views/layouts/default
+            {html.children}
+        </div>
     </body>
 </html>
 )

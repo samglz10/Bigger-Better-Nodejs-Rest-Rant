@@ -1,4 +1,5 @@
 const React = require('react')
+
  //an html skeleton
 const DefaultPage = (html) => {
 return (

@@ -20,6 +20,10 @@ app.use('/places', require('./controller/places'));
         //res.render send html jsx is the same
         res.render('./layouts/default')
     })
+    app.get('/home',(req,res) => {
+        //res.render send html jsx is the same
+        res.render('home')
+    })
     //Places Route
     app.get('/places',(req,res) => {
         res.send('Places')
@@ -37,7 +41,7 @@ app.use('/places', require('./controller/places'));
         res.send('places/:id/edit')
     })
     app.get('*',(req,res) => {
-        res.send('404')
+        res.render('error404')
     })
 
 

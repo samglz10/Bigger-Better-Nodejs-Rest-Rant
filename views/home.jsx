@@ -1,12 +1,13 @@
 const React = require('react')
-const DefaultPage = require('./default')
+const DefaultPage = require('./layouts/default')
 
 const Home = () =>{
+    return (
 <DefaultPage>
     <main>
         <h1> HOME </h1>
     </main>
-</DefaultPage>
+</DefaultPage>)
 }
 
 module.exports = Home

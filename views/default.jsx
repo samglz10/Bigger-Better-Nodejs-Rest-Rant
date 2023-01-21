@@ -1,6 +1,6 @@
 const React = require('react')
- 
-function Def (html) {
+ //an html skeleton
+const DefaultPage = (html) => {
 return (
 <html>
     <head>
@@ -13,4 +13,4 @@ return (
 )
 }
 
-module.exports = Def
+module.exports = DefaultPage

@@ -3,6 +3,18 @@ h1 {
     color: cornflowerblue;
   }
 
+  body {
+    background-color: #339cff;
+    text-align: center;
+  }
+  
+  main {
+    margin-right: 20px;
+    margin-left: 20px;
+    background-color: white;
+  }
+  
+
 .thumbnail-div {
     display: flex;
     justify-content: center;
@@ -64,3 +76,14 @@ h1 {
   object-fit:cover;
 }
 
+nav{
+ display: flex;
+ justify-content: center;
+}
+
+.navbar-collapse {
+  justify-content: space-around;
+}
+.navbar-brand {
+  margin: 20px;
+}

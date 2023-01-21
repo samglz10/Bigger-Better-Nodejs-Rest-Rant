@@ -24,7 +24,7 @@ router.get('/:id/edit',(req,res) => {
 
 //POST(CREATE) - New restaurant
 router.post('/', (req, res) => {
-    console.log(places)
+    // to check if data is coming through use - console.log(places)
     if (!req.body.pic) {
       // Default image if one is not provided
       req.body.pic = 'http://placekitten.com/400/400'

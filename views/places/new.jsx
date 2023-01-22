@@ -18,7 +18,7 @@ const New_Form = (data) => {
                 <h1> Add a new Place!</h1>
                     {message}
                 <div className='row'>
-                    <form className="form-group col-sm-6"  method="POST" action="/places">
+                    <form className="form-group col-sm-6 mb-3"  method="POST" action="/places">
                         <div className="form-group col-sm-6">
                             <label htmlFor="name"> Place Name</label>
                             <input className="form-control" id="name" name="name" required/>
@@ -43,7 +43,7 @@ const New_Form = (data) => {
                             <label for="founded">Founded Year</label>
                             <input className="form-control" id="founded" name="founded" value={new Date().getFullYear()} />
                         </div>
-                        <input className="btn btn-primary" type="submit" value="Add Place"/>
+                        <input className="btn btn-primary mt-3" type="submit" value="Add Place"/>
                     </form>
                 </div>
             </main>

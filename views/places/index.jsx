@@ -3,15 +3,11 @@ const DefaultPage = require('../default')
 import Button from 'react-bootstrap/Button';
 import Image from 'react-bootstrap/Image'
 
-
-//data parameter will pass
-
 const PlacesIndex =(data) => {
     let placesFormatted = data.places.map((place) => {
         return (
           <>
-          <div className='row'>
-            <div className="col-sm-6 col-md-4 col-lg-3">
+          <div className='card d-flex justify-content-center align-items-center'>
                 <h2 className='col-sm-6 col-md-4 col-lg-3'>
                   <a href={`/places/${place.id}`}>
                     {place.name}
@@ -22,11 +18,11 @@ const PlacesIndex =(data) => {
                       {place.cuisines}
                     </p>
                   </div>
-            </div>
+            
             <div className='col-sm-6 col-md-4 col-lg-3'>
-                  <Image className='image-fit' src={place.pic} alt={place.name} />
+                  <Image className='img-fluid' src={place.pic} alt={place.name} />
             </div>
-                <p className="">
+                <p className="className='col-sm-6 col-md-4 col-lg-3">
                         Located in {place.city}, {place.state}
                 </p>
           </div>
@@ -37,12 +33,14 @@ const PlacesIndex =(data) => {
             <DefaultPage>
                 <link rel="stylesheet" href='/css/styles.css'/>
                 <main>
-                      <div className='col'>
+                      <div className='row'>
                       <h1> Places </h1>
-                          {placesFormatted} 
+                          {placesFormatted}
+                        <div className='my-3'>
                           <a className='btn-nav' href="/">
                               <Button  variant="primary">Home</Button>
                           </a>
+                        </div>
                       </div>
                 </main>
             </DefaultPage>  

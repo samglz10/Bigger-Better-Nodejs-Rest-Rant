@@ -1,10 +1,10 @@
 h1 {
     text-align: center;
-    color: cornflowerblue;
+    color: rgba(15, 146, 233, 0.815);
   }
 
   body {
-    background-color: #339cff;
+    background-color: rgba(15, 146, 233, 0.815);
     text-align: center;
   }
   
@@ -76,7 +76,7 @@ h1 {
   object-fit:cover;
 }
 
-nav{
+nav {
  display: flex;
  justify-content: center;
 }
@@ -86,6 +86,10 @@ nav{
 }
 .navbar-brand {
   margin: 20px;
+}
+
+#navbarSupportedContent {
+  display: flex;
 }
 
 .row {

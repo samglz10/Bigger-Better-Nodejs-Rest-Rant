@@ -50,7 +50,7 @@ const ShowPage = (data) => {
                 <div className='row'>
                     <h1> {data.place.name} </h1>
                     <div className='col-sm=6'>
-                        <img className='image-fit' src={data.place.pic} alt={data.place.name} />
+                        <img className='img-fluid' src={data.place.pic} alt={data.place.name} />
                     </div>
                     <h3>
                         Located in {data.place.city}, {data.place.state}
@@ -65,20 +65,20 @@ const ShowPage = (data) => {
                     <h4>
                         Serving{data.place.cuisines}
                     </h4>
-                    <br/>
-                    <div>
-                        <h2>Comments</h2>
-                        <p>{comments}</p>
+                    <div className='row'>
+                      <a href={`/places/${data.place.id}/edit`} className="btn btn-warning">
+                          Edit
+                      </a>
+                      <form method="POST" action={`/places/${data.place.id}?_method=DELETE`}>
+                          <button type="submit" className="btn btn-danger">
+                              Delete
+                          </button>
+                      </form> 
                     </div>
-                    <div>
-                    <a href={`/places/${data.place.id}/edit`} className="btn btn-warning">
-                         Edit
-                    </a>{` `}
-                    <form method="POST" action={`/places/${data.place.id}?_method=DELETE`}>
-                        <button type="submit" className="btn btn-danger">
-                            Delete
-                        </button>
-                    </form> 
+                    <br/>
+                    <div className="card d-flex justify-content-center align-items-center  ">
+                        <h2>Comments</h2>
+                        <p className="row ">{comments}</p>
                     </div>
                     <h2>Got Your Own Rant or Rave?</h2>
                 <form action={`/places/${data.place.id}/comment`} method="POST">
@@ -102,7 +102,7 @@ const ShowPage = (data) => {
                     <input type="checkbox" id="rant" name="rant" className="form-control" />
                     </div>
                 </div>
-                <input type="submit" className="btn btn-primary" value="Add Comment" />
+                <input type="submit" className="btn btn-primary my-3 " value="Add Comment" />
                 </form>
                 </div>
             </main>

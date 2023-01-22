@@ -18,7 +18,7 @@ const Edit_Form = (data) => {
                 <h1> Edit Place </h1>
                 {message}
                 <div className='row'>
-                    <form className="form-group col-sm-6"  method="POST" action={`/places/${data.place.id}?_method=PUT`}>
+                    <form className="form-group col-sm-6 mb-3"  method="POST" action={`/places/${data.place.id}?_method=PUT`}>
                         <div className="form-group col-sm-6">
                             <label htmlFor="name"> Place Name</label>
                             <input 
@@ -29,20 +29,39 @@ const Edit_Form = (data) => {
                                 required/>
                         </div>
                         <div className="form-group col-sm-6">
-                            <label htmlFor="pic"> Place pic</label>
-                            <input className="form-control" type="url" id="pic" name="pic"/>
+                            <label htmlFor="pic">
+                                 Place pic</label>
+                            <input 
+                                className="form-control" 
+                                type="url" 
+                                name="pic"
+                                value={data.place.pic} 
+                                id="pic"/>
                         </div>
                         <div className="form-group col-sm-6">
                             <label htmlFor="city"> City</label>
-                            <input className="form-control"  id="city" name="city"/>
+                            <input 
+                                className="form-control" 
+                                id="city" 
+                                name="city" 
+                                value={data.place.city} />
                         </div>
                         <div className="form-group col-sm-6">
                             <label htmlFor="state"> State</label>
-                            <input className="form-control"  id="state" name="state"/>
+                            <input 
+                                className="form-control"  
+                                id="state" 
+                                name="state"
+                                value={data.place.state}/>
                         </div>
                         <div className="form-group col-sm-6">
                             <label htmlFor="cuisines"> Cuisines</label>
-                            <input className="form-control"  id="cuisines" name="cuisines" required/>
+                            <input 
+                                className="form-control"  
+                                id="cuisines" 
+                                name="cuisines"
+                                value={data.place.cuisines}
+                                required/>
                         </div>
                         <input className="btn btn-primary" type="submit" value="Update Place"/>
                     </form>

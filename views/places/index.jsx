@@ -1,7 +1,6 @@
 const React = require('react')
 const DefaultPage = require('../default')
 import Button from 'react-bootstrap/Button';
-import places from '../../models/places';
 
 //data parameter will pass
 
@@ -11,7 +10,7 @@ const PlacesIndex =(data) => {
           <>
           <div className="col-sm-6">
               <h2>
-                <a href={`/places/${place.id}`}>
+                <a href={`/places/${place_id}`}>
                   {place.name}
                 </a>
               </h2>
@@ -30,7 +29,6 @@ const PlacesIndex =(data) => {
           </>
         )
       })
-      
         return (
             <DefaultPage>
                 <link rel="stylesheet" href='/css/styles.css'/>

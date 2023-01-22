@@ -50,7 +50,7 @@ const ShowPage = (data) => {
                 <div className='row'>
                     <h1> {data.place.name} </h1>
                     <div className='col-sm=6'>
-                        <img className='img-fluid' src={data.place.pic} alt={data.place.name} />
+                        <img className='img-fluid' src={data.place.pic} alt={data.place.name} height={700} width={700} />
                     </div>
                     <h3>
                         Located in {data.place.city}, {data.place.state}

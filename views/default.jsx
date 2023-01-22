@@ -16,7 +16,7 @@ const DefaultPage = (html) => {
              <link rel="stylesheet" href='/css/styles.css'/>
         </head>
         <body className='' >
-            <Navbar className="navbar navbar-expand-lg navbar-light bg-light d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 border-bottom position-sticky">
+            <Navbar className="navbar navbar-expand-lg navbar-light bg-light d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 border-bottom position-sticky px-3">
                 <a className="navbar-brand" href="/"> Rest-Rant 2.0</a>
             <div className="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0" id="navbarSupportedContent">
                 <ul className="navbar-nav mr-auto">

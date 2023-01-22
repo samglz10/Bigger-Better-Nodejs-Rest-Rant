@@ -87,3 +87,14 @@ nav{
 .navbar-brand {
   margin: 20px;
 }
+
+.row {
+  display: flex;
+  justify-content: center;
+  margin: 0;
+}
+
+.form-group {
+  margin: auto;
+}
+

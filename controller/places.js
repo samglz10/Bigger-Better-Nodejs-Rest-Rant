@@ -1,67 +1,65 @@
-/*Express JS use express.Router class to create modular and mountable route handlers. 
-The Router instance also known as Mini-app, is a complete middleware routing system in ExpressJS.*/
 const router = require('express').Router()
-const places = require('../models/places')
-	
-// by removing app and replacing with router.get - this will router to /places/ - no need to specify because router uses the file name
+//reference models for database
+const db =require('../models')
+
 router.get('/', (req, res) => {
-    res.render('places/index', {places})
-})
-
-//New Place Route
-router.get('/new',(req,res) => {
-    res.render('places/new')
-})
-//New Place Route - dynamic ID must be below any other variables
-router.get('/:id', (req, res) => {
-    let id = Number(req.params.id)
-    if (isNaN(id)) {
-      res.render('error404')
-    }
-    else if (!places[id]) {
-      res.render('error404')
-    }
-    else {
-      res.render('places/show', { place: places[id], id })
-    }
+  db.Place.find()
+  .then((places)=>{
+    res.render('places/index'), {places}
   })
-  
-//New Edit Place Route - dynamic ID
-router.get('/:id/edit',(req,res) => {
-    res.send('places/:id/edit')
+  .catch(err => {
+    console.log(err)
+    res.render('error404')
+  })
 })
 
-//POST(CREATE) - New restaurant
 router.post('/', (req, res) => {
-    // to check if data is coming through use - console.log(places)
-    if (!req.body.pic) {
-      // Default image if one is not provided
-      req.body.pic = 'http://placekitten.com/400/400'
-    }
-    if (!req.body.city) {
-      req.body.city = 'Anytown'
-    }
-    if (!req.body.state) {
-      req.body.state = 'USA'
-    }
-    places.push(req.body)
-    res.redirect('/places')
+  db.Place.create(req.body)
+  .then(() => {
+      res.redirect('/places')
   })
-
-router.delete('/places/:id', (req, res) => {
-    let id = Number(req.params.id)
-    if (isNaN(id)) {
-        res.render('error404')
-    }
-    else if (!places[id]) {
-        res.render('error404')
-    }
-    else {
-        data.places.splice(id, 1)
-        res.redirect('/places')
-    }
+  .catch(err => {
+      console.log('err', err)
+      res.render('error404')
+  })
 })
 
-  
-  
+
+router.get('/new', (req, res) => {
+  res.render('places/new')
+})
+
+router.get('/:id', (req, res) => {
+  db.Place.findById(req.params.id)
+  .then(place => {
+      res.render('places/show', { place })
+  })
+  .catch(err => {
+      console.log('err', err)
+      res.render('error404')
+  })
+})
+
+
+router.put('/:id', (req, res) => {
+  res.send('PUT /places/:id stub')
+})
+
+router.delete('/:id', (req, res) => {
+  res.send('DELETE /places/:id stub')
+})
+
+router.get('/:id/edit', (req, res) => {
+  res.send('GET edit form stub')
+})
+
+router.post('/:id/rant', (req, res) => {
+  res.send('GET /places/:id/rant stub')
+})
+
+router.delete('/:id/rant/:rantId', (req, res) => {
+    res.send('GET /places/:id/rant/:rantId stub')
+})
+
 module.exports = router
+//Part Three: Updating Index and Show

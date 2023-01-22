@@ -1,5 +1,5 @@
 const React = require('react')
-const DefaultPage = require('./layouts/default')
+const DefaultPage = require('./default')
 import Button from 'react-bootstrap/Button';
 import Image from 'react-bootstrap/Image';
 

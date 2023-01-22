@@ -3,16 +3,22 @@ const DefaultPage = require('../default')
 //import Button from 'react-bootstrap/Button';
 //import Image from 'react-bootstrap/Image';
 
-const New_Form = () => {
+const Edit_Form = (data) => {
 
     return(
         <DefaultPage>
             <main>
-                <h1> Add a new Place!</h1>
-                <form method="POST" action="/places">
+                <h1> Edit Place </h1>
+                <div className='row'>
+                <form method="POST" action={`/places/${data.id}?_method=PUT`}>
                     <div className="form-group col-sm-6">
                         <label htmlFor="name"> Place Name</label>
-                        <input className="form-control" id="name" name="name" required/>
+                        <input 
+                            className="form-control" 
+                            id="name" 
+                            name="name"
+                            value={data.place.name}
+                            required/>
                     </div>
                     <div className="form-group col-sm-6">
                         <label htmlFor="pic"> Place pic</label>
@@ -30,15 +36,12 @@ const New_Form = () => {
                         <label htmlFor="cuisines"> Cuisines</label>
                         <input className="form-control"  id="cuisines" name="cuisines" required/>
                     </div>
-                    <div className="form-group">
-                        <label for="founded">Founded Year</label>
-                        <input className="form-control" id="founded" name="founded" />
-                    </div>
                     <input className="btn btn-primary" type="submit" value="Add Place"/>
                 </form>
+                </div>
             </main>
         </DefaultPage>
     )
 }
 
-module.exports = New_Form
+module.exports = Edit_Form

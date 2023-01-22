@@ -3,12 +3,20 @@ const DefaultPage = require('../default')
 //import Button from 'react-bootstrap/Button';
 //import Image from 'react-bootstrap/Image';
 
-const New_Form = () => {
-
+const New_Form = (data) => {
+    let message = ''
+    if (data.message) {
+        message = (
+            <h4 className='alert-danger'>
+                {data.message}
+            </h4>
+        )
+    }
     return(
         <DefaultPage>
             <main>
                 <h1> Add a new Place!</h1>
+                    {message}
                 <div className='row'>
                     <form className="form-group col-sm-6"  method="POST" action="/places">
                         <div className="form-group col-sm-6">

@@ -1,6 +1,8 @@
 const React = require('react')
 const DefaultPage = require('../default')
 import Button from 'react-bootstrap/Button';
+import Image from 'react-bootstrap/Image'
+
 
 //data parameter will pass
 
@@ -8,24 +10,26 @@ const PlacesIndex =(data) => {
     let placesFormatted = data.places.map((place) => {
         return (
           <>
-          <div className="col-sm-6">
-              <h2>
-                <a href={`/places/${place_id}`}>
-                  {place.name}
-                </a>
-              </h2>
-                <div className='place-name'>
-                  <p className="text-center">
-                    {place.cuisines}
-                  </p>
-                </div>
-          </div>
-            <div className='places-images'>
-                <img className='image-fit' src={place.pic} alt={place.name} />
+          <div className='row'>
+            <div className="col-sm-6 col-md-4 col-lg-3">
+                <h2 className='col-sm-6 col-md-4 col-lg-3'>
+                  <a href={`/places/${place.id}`}>
+                    {place.name}
+                  </a>
+                </h2>
+                  <div className='col-sm-6 col-md-4 col-lg-3'>
+                    <p className="text-center">
+                      {place.cuisines}
+                    </p>
+                  </div>
             </div>
-              <p className="places-description">
-                      Located in {place.city}, {place.state}
-              </p>
+            <div className='col-sm-6 col-md-4 col-lg-3'>
+                  <Image className='image-fit' src={place.pic} alt={place.name} />
+            </div>
+                <p className="">
+                        Located in {place.city}, {place.state}
+                </p>
+          </div>
           </>
         )
       })

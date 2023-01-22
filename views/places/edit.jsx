@@ -4,13 +4,21 @@ const DefaultPage = require('../default')
 //import Image from 'react-bootstrap/Image';
 
 const Edit_Form = (data) => {
-
+    let message = '';
+    if (data.message) {
+        message = (
+            <h4 className='alert-danger'>
+                {data.message}
+            </h4>
+        )
+    }
     return(
         <DefaultPage>
             <main>
                 <h1> Edit Place </h1>
+                {message}
                 <div className='row'>
-                    <form className="form-group col-sm-6"  method="POST" action={`/places/${data.id}?_method=PUT`}>
+                    <form className="form-group col-sm-6"  method="POST" action={`/places/${data.place.id}?_method=PUT`}>
                         <div className="form-group col-sm-6">
                             <label htmlFor="name"> Place Name</label>
                             <input 
@@ -36,7 +44,7 @@ const Edit_Form = (data) => {
                             <label htmlFor="cuisines"> Cuisines</label>
                             <input className="form-control"  id="cuisines" name="cuisines" required/>
                         </div>
-                        <input className="btn btn-primary" type="submit" value="Add Place"/>
+                        <input className="btn btn-primary" type="submit" value="Update Place"/>
                     </form>
                 </div>
             </main>

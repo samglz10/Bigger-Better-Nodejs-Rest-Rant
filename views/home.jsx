@@ -16,7 +16,6 @@ const Home = () => {
                         Photo by Peter Dawn 
                     </a>
              </div>
-                {console.log("views/home")}
                 <a className='btn-nav' href="/places">
                     <Button variant="secondary">Places</Button>
                 </a>

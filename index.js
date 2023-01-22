@@ -13,7 +13,7 @@ app.engine('jsx', require('express-react-views').createEngine());
 app.use(express.static('public'));
 app.set('views', __dirname + '/views');
 app.use(express.urlencoded({ extended: true }));
-app.use(methodOverride('__method'));
+app.use(methodOverride('_method'));
 
 //mongoose connection
 
@@ -41,5 +41,4 @@ app.use('/places', require('./controller/places'));
 
 app.listen(process.env.PORT, ()=> {
     console.log('listening on http://localhost:3000/')
-    console.log(process.env.PORT)
 })

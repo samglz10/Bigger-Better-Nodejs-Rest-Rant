@@ -13,10 +13,18 @@ const ShowPage = (data) => {
                     <div className='places-images'>
                         <img className='image-fit' src={data.place.pic} alt={data.place.name} />
                     </div>
+                    <h3>
+                        Located in {data.place.city}, {data.place.state}
+                    </h3>
                     <h2> Rating </h2>
                         <p>Not yet Rated</p>
                     <h2> Description</h2>
-                    <p>{data.place.city} {data.place.state} and serving {data.place.cuisines}</p>
+                    <h3>
+                        {data.place.showEstablished()}
+                    </h3>
+                    <h4>
+                        Serving{data.place.cuisines}
+                    </h4>
                     <div>
                         <h2>Comments</h2>
                         <p>No Comments yet! Be the first to comment and let the world know how you feel!</p>

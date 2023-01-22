@@ -5,7 +5,7 @@ const db =require('../models')
 router.get('/', (req, res) => {
   db.Place.find()
   .then((places)=>{
-    res.render('places/index'), {places}
+    res.redirect('places/index'), {places}
   })
   .catch(err => {
     console.log(err)
@@ -62,4 +62,3 @@ router.delete('/:id/rant/:rantId', (req, res) => {
 })
 
 module.exports = router
-//Part Three: Updating Index and Show

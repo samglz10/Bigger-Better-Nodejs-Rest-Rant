@@ -15,7 +15,6 @@ const Home = () => {
                     <a href="https://unsplash.com/photos/mM-L0yx5LcQ?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">
                         Photo by Peter Dawn 
                     </a>
-                    {console.log(MONGO_URI)}
              </div>
                 {console.log("views/home")}
                 <a className='btn-nav' href="/places">

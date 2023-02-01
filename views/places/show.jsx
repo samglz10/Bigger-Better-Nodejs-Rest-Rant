@@ -66,9 +66,11 @@ const ShowPage = (data) => {
                         Serving{data.place.cuisines}
                     </h4>
                     <div className='row'>
-                      <a href={`/places/${data.place.id}/edit`} className="btn btn-warning">
-                          Edit
-                      </a>
+                      <div>
+                        <a href={`/places/${data.place.id}/edit`} className="btn btn-warning">
+                            Edit
+                        </a>
+                      </div>
                       <form method="POST" action={`/places/${data.place.id}?_method=DELETE`}>
                           <button type="submit" className="btn btn-danger">
                               Delete
